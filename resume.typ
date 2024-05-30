@@ -2,18 +2,16 @@
 
 // 设置图标, 来源: https://fontawesome.com/icons/
 // 如果要修改图标颜色, 请手动修改 svg 文件中的 fill="rgb(38, 38, 125)" 属性
-// 例如可以使用 VS Code 的全局文本替换功能
-#let faAward = icon("icons/fa-award.svg")
-#let faBuildingColumns = icon("icons/fa-building-columns.svg")
-#let faCode = icon("icons/fa-code.svg")
-#let faEnvelope = icon("icons/fa-envelope.svg")
-#let faGithub = icon("icons/fa-github.svg")
-#let faGraduationCap = icon("icons/fa-graduation-cap.svg")
-#let faLinux = icon("icons/fa-linux.svg")
-#let faPhone = icon("icons/fa-phone.svg")
-#let faWindows = icon("icons/fa-windows.svg")
-#let faWrench = icon("icons/fa-wrench.svg")
-#let faWork = icon("icons/fa-work.svg")
+#let faAward = icon("fa-award.svg")
+#let faBuildingColumns = icon("fa-building-columns.svg")
+#let faCode = icon("fa-code.svg")
+#let faEnvelope = icon("fa-envelope.svg")
+#let faGithub = icon("fa-github.svg")
+#let faGraduationCap = icon("fa-graduation-cap.svg")
+#let faLinux = icon("fa-linux.svg")
+#let faPhone = icon("fa-phone.svg")
+#let faWindows = icon("fa-windows.svg")
+#let faWrench = icon("fa-wrench.svg")
 
 // 主题颜色
 #let themeColor = rgb(38, 38, 125)
@@ -29,145 +27,202 @@
   bottom: 2cm,
   left: 2cm,
   right: 2cm,
-
-  // 如果需要姓名及联系信息居中，请删除下面关于头像的三行参数，并取消headerCenter的注释
-  //headerCenter : true,
-  
-  // 如果不需要头像，则将下面三行的参数注释或删除
-  photograph: "profile.jpg",
+  // 如果不需要头像，则将下面的参数注释或删除
+  photograph: "lwt.png",
   photographWidth: 10em,
   gutterWidth: 2em,
 )[
 
-= 方橙
+#[
+#set text(size: 1.1em)
+= 廖文焘
+]
 
 #info(
   color: themeColor,
   (
     // 其实 icon 也可以直接填字符串, 如 "fa-phone.svg" 
     icon: faPhone,
-    content: "(+86) 155-5555-5555"
+    content: "(+86) 151-0506-0572"
   ),
   (
     icon: faBuildingColumns,
-    content: "南京大学",
+    content: "福州大学",
   ),
   (
     icon: faGraduationCap,
-    content: "人工智能",
+    content: "软件工程",
   ),
   (
     icon: faEnvelope,
-    content: "orangex4@qq.com",
-    link: "mailto:orangex4@qq.com"
+    content: "2984502149@qq.com",
+    link: "mailto:2984502149@qq.com"
   ),
   (
     icon: faGithub,
-    content: "github.com/orangex4",
-    link: "https://github.com/orangex4",
+    content: "github.com/Clareses",
+    link: "https://github.com/Clareses",
   ),
 )
-][
-#h(2em)  // 手动顶行, 2em 代表两个字的宽度
 
-我是 OrangeX4，你也可以叫我 *一只方橙* 或 *方橙*。现在是南京大学人工智能学院 2020 级本科生，正深陷于学习数学、编程和英语的无边苦海中。你问为什么我的名字那么奇怪？ 大概是我喜欢吃橘子和橙子，又谐音方程，还有和我的名字谐音的缘故吧。喜欢一切新奇的东西，兴趣十分广泛。
+#h(1.5em)  // 手动顶行, 2em 代表两个字的宽度
+我是廖文焘，现在是福州大学计算机与大数据学院软件工程专业 2020 级本科生。我对计算机中的一切都充满好奇，热爱编程，着迷于设计与实现并发算法，使程序在各种互斥与同步的约束下乱中有序地进行。希望能有更多的机会接触并实践自己的想法，不断提升自我。
 ]
 
 
 == #faGraduationCap 教育背景
 
-#sidebar(withLine: true, sideWidth: 12%)[
-  2023.05
-  
-  2020.09
+#sidebar(withLine: true, sideWidth: 7%)[
+  2021.09
+
+  至今
 ][
-  *南京大学* · 人工智能学院 · 人工智能专业
+  *福州大学* · 计算机与大数据学院 · 软件工程专业
   
-  GPA: 4.48 / 5 · Rank: 15%
+  GPA: 3.05 / 4 · Rank: 30%
 ]
 
 
 == #faWrench 专业技能
 
-#sidebar(withLine: false, sideWidth: 12%)[
+#sidebar(withLine: false, sideWidth: 7%)[
   *操作系统*
   
   *掌握*
   
   *熟悉*
-
-  *了解*
 ][
-  #faLinux Linux, #h(0.5em) #faWindows Windows
+  #v(-0.25em)
+  #faLinux Linux #h(0.5em)
   
-  React, JavaScript, Python
+  Cuda 异构编程, OpenMP 并行编程, MPI 并行编程, 性能分析
   
-  Vue, TypeScript, Node.js
-
-  Webpack, Java
+  C++, Python, Rust, Dart, scheme
 ]
 
 
 == #faAward 获奖情况
 
 #item(
-  [ *人民奖学金* ],
-  [ *一等奖 · 二等奖* ],
-  date[ 2021 年 11 月 – 2022 年 11 月 ]
+  [ *ASC 世界大学生超级计算机竞赛* ],
+  [ *一等奖* ],
+  date[ 2024 年 02 月 ]
 )
 
 #item(
-  [ *人工智能 +* ],
-  [ *二等奖* ],
-  date[ 2021 年 11 月 – 2022 年 11 月 ]
+  [ *福建省大学生人工智能创意赛* ],
+  [ *三等奖* ],
+  date[ 2023 年 12 月 ]
 )
 
-// == #faWork 实习经历
+#item(
+  [ *全国大学生数学建模大赛省赛* ],
+  [ *三等奖*],
+  date[ 2023 年 11 月 ]
+)
 
-// 在这里添加你的实习经历
+#item(
+  [ *校级奖学金* ],
+  [ *三等奖* ],
+  date[ 2021 年 09 月 ]
+)
+
 
 == #faCode 项目经历
 
 #item(
   link(
-    "https://github.com/OrangeX4/Latex-Sympy-Calculator",
-    [ *Latex Sympy Calculator* ]
+    "",
+    [ *OpenCAEPoro 性能优化* ]
   ),
-  [ *个人项目* ],
-  date[ 2021 年 02 月 – 2021 年 04 月 ]
+  [ *比赛项目* ],
+  date[ 2023 年 12 月 – 2024 年 01 月 ]
 )
 
-#tech[ NodeJS, Python, VS Code ]
+#tech[ MPI, OpenMP, C++, HPC ]
 
-一个用于在 VS Code 中使用 LaTeX 数学公式进行「科学计算」的插件
+ASC24 超算竞赛赛题，对 OpenCAEPoro 科学模拟软件进行性能优化
 
-- 使用 ANTLR 将 LaTeX 语句编译为 Sympy 语句
-- 通过 Flask 搭建本地 HTTP 服务器与 VS Code 插件进行通信
-- 可以进行多种类型的科学计算，如积分求导、矩阵计算、无穷级数计算等
+- 作为福州大学超算队伍队长带队参赛，负责 OpenCAEPoro 赛题的性能优化
+- 使用 perf 等工具进行程序性能分析，对计算瓶颈使用 SIMD / MPI + OpenMP 混编等方式对程序进行并行优化；修改存储结构，提高访存效率
+- 在该赛题上取得 1 倍加速比，获得世界总决赛一等奖
 
 #item(
   link(
-    "https://github.com/OrangeX4/Reversi",
-    [ *黑白棋 Reversi* ]
+    "",
+    [ *大数据泛构支撑点选择算法并行优化* ]
   ),
-  [ *课程项目* ],
-  date[ 2021 年 02 月 – 2021 年 04 月 ]
+  [ *本科生科研训练项目* ],
+  date[ 2023 年 05 月 – 2024 年 05 月 ]
 )
 
-#tech[ React, Python, AI ]
+#tech[ Cuda, 大数据 ]
 
-基于 React 与 Antd 的黑白棋前端，与基于 Python 的黑白棋 AI 后端
+本科生科研训练项目，使用 cuda 对树型搜索计算密集型问题进行并行优化
 
-- 使用基于评估函数的 BFS 实现了黑白棋 AI，并实现了 Alpha-Beta 剪枝
-- 基于 React 搭建了一个黑白棋平台前端，支持玩家对战、人机对战和 AI 对战
-- 在后端使用 Flask 及 Socket.io 库，实现了玩家之间的联机对战
+- 作为项目负责人，负责指定计划并参与开发
+- 使用 cuda 对原算法进行改写，并使用 Nsight 进行性能分析与进一步优化
+- 目前已取得 30+ 倍加速比，下一步将整理代码等材料并进行论文撰写
+
+#item(
+  link(
+    "",
+    [ *NJU ICS-PA 计算机体系课程作业* ]
+  ),
+  [ *课程项目* ],
+  date[ 2022 年 06 月 – 2022 年 08 月 ]
+)
+
+#item(
+  link(
+    "",
+    [ *MIT 6.828 xv6 OS 源码阅读与注解* ]
+  ),
+  [ *课程项目* ],
+  date[ 2023 年 09 月 – 2022 年 10 月 ]
+)
+
+#item(
+  link(
+    "",
+    [ *CMU 15-418 Parallel Computing 课程作业* ]
+  ),
+  [ *课程项目* ],
+  date[ 2022 年 11 月 ]
+)
+
+#item(
+  link(
+    "",
+    [ *CMU 15-213 CSAPP 课程作业*]
+  ),
+  [ *课程项目* ],
+  date[ 2022 年 03 月 ]
+)
 
 
 == #faBuildingColumns 校园经历
 
+#item(
+  [ *进入福州大学思政办公室担任学生秘书* ],
+  [],
+  date[ 2020 年 10 月 ]
+)
 
 #item(
-  [ *微软学生俱乐部技术部部长* ],
+  [ *加入福州大学服务外包实验室移动组* ],
   [],
-  date[ 2021 年 09 月 – 2022 年 09 月 ]
+  date[ 2020 年 11 月  ]
+)
+
+#item(
+  [ *加入福州大学超级计算团队* ],
+  [],
+  date[ 2022 年 09 月]
+)
+
+#item(
+  [ *担任福州大学超级计算团队本科负责人* ],
+  [],
+  date[ 2023 年 03 月 ]
 )

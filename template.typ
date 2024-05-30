@@ -26,9 +26,7 @@
   photograph: "",
   photographWidth: 0em,
   gutterWidth: 0em,
-  headerCenter : false,
   header,
-  introduction,
   body
 ) = {
   // 页边距设定
@@ -77,23 +75,14 @@
   show par: set block(spacing: 0.65em)
   
   // 首部与照片
-
-  if headerCenter {
-    assert(photograph == "", message: "can not centerize the name with the photo")
-    align(alignment.center, header)
-    introduction
-  } else {
-    grid(
-      columns: (auto, 1fr, photographWidth),
-      gutter: (gutterWidth, 0em),
-      
-      [#header 
-      #introduction],
-      if (photograph != "") {
-        image(photograph, width: photographWidth)
-      }
-    )
-  }
+  grid(
+    columns: (auto, 1fr, photographWidth),
+    gutter: (gutterWidth, 0em),
+    header,
+    if (photograph != "") {
+      image(photograph, width: photographWidth)
+    }
+  )
   
   body
 }
@@ -153,7 +142,7 @@
 // 日期： 颜色变灰
 #let date(body) = text(
   fill: rgb(128, 128, 128),
-  size: 0.9em,
+  size: 1.0em,
   body
 )
 
@@ -172,7 +161,7 @@
 ) = {
   v(0.25em)
   grid(
-    columns: (30%, 1fr, auto),
+    columns: (50%, 1fr, auto),
     gutter: (0em),
     title, desc, endnote
   )
