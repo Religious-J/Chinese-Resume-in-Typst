@@ -1,8 +1,20 @@
 // 字体
+// #let font = (
+//   main: "IBM Plex Serif",
+//   mono: "IBM Plex Mono",
+//   cjk: "Noto Serif CJK SC",
+// )
+
+// #let font = (
+//   main: "Arial",
+//   mono: "Consolas",
+//   cjk: "Microsoft YaHei", // 微软雅黑
+// )
+
 #let font = (
-  main: "IBM Plex Serif",
-  mono: "IBM Plex Mono",
-  cjk: "Noto Serif CJK SC",
+  main: "Times New Roman",
+  mono: "Courier New",
+  cjk: "SimSun", // 宋体
 )
 
 // 图标
@@ -122,6 +134,29 @@
   )
 })
 
+#let sidebar2(side, content, with-line: true, side-width: 12%) = layout(size => {
+  let side-size = measure(width: size.width, height: size.height, side);
+  let content-size = measure(width: size.width * (100% - side-width), height: size.height, content);
+  let height = calc.max(side-size.height, content-size.height) + 0.5em; 
+  grid(
+    columns: (side-width, 0%, 1fr),
+    gutter: 0.75em, 
+    { 
+      set align(left)
+      v(0.25em)
+      side
+      v(0.25em)
+    },
+    if with-line { line(end: (0em, height), stroke: 0.05em) }, 
+    { 
+      v(0.25em) 
+      content 
+      v(0.25em) 
+    }
+  ) 
+})
+
+
 // 个人信息
 #let info(
   color: black,
@@ -180,3 +215,17 @@
     title, desc, endnote,
   )
 }
+
+#let item2(
+  title,
+  desc,
+  endnote,
+) = {
+  v(0.25em)
+  grid(
+    columns: (60%, 1fr, auto),
+    gutter: 0em,
+    title, desc, endnote,
+  )
+}
+
